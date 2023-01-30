@@ -2,11 +2,8 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-
-      <app-recipes *ngIf="loadedFeature==='recipe'"></app-recipes>
-      <app-shopping-list *ngIf="loadedFeature==='recipe'"></app-shopping-list>
-      <h2>I'm Working</h2>
-      <i class="bi bi-plus"></i>
+      <app-recipes *ngIf="loadedFeature === 'recipe'"></app-recipes>
+      <app-shopping-list *ngIf="loadedFeature !== 'recipe'"></app-shopping-list>
     </div>
   </div>
 </div>
