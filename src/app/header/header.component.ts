@@ -14,6 +14,6 @@ export class HeaderComponent {
   }
 
   onFetchData() {
-    this.dataStorageService.fetchRecipies();
+    this.dataStorageService.fetchRecipies().subscribe();
   }
 }
