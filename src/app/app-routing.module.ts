@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.component';
+import { RecipesResolverService } from './recipes/recipes-resolver.service';
 import { RecipesComponent } from './recipes/recipes.component';
 import { RecipieEditComponent } from './recipes/recipie-edit/recipie-edit.component';
 import { RecipieStartComponent } from './recipes/recipie-start/recipie-start.component';
@@ -14,8 +15,8 @@ const appRoutes: Routes = [
     children: [
       { path: '', component: RecipieStartComponent },
       { path: 'new', component: RecipieEditComponent },
-      { path: ':id', component: RecipeDetailComponent },
-      { path: ':id/edit', component: RecipieEditComponent },
+      { path: ':id', component: RecipeDetailComponent, resolve: [RecipesResolverService] },
+      { path: ':id/edit', component: RecipieEditComponent, resolve: [RecipesResolverService] },
     ],
   },
   { path: 'shopping-list', component: ShoppingListComponent },
