@@ -21,7 +21,7 @@ export class DataStorageService {
   }
 
   fetchRecipies() {
-   return this.http
+    return this.http
       .get<Recipe[]>(
         'https://course-project-6db03-default-rtdb.firebaseio.com/recipes.json'
       )
@@ -33,11 +33,10 @@ export class DataStorageService {
               ingredients: recipe.ingredients ? recipe.ingredients : []
             };
           });
-        }),
-        tap(recipes => {
-
         })
       )
-  
+      .subscribe(recipes => {
+        this.recipeService.setRecipes(recipes);
+      });
   }
 }
