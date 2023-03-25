@@ -17,6 +17,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { RecipieStartComponent } from './recipes/recipie-start/recipie-start.component';
 import { RecipieEditComponent } from './recipes/recipie-edit/recipie-edit.component';
 import { RecipeService } from './recipes/recipe.service';
+import { AuthComponent } from './auth/auth.component';
+
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import { RecipeService } from './recipes/recipe.service';
     ShoppingEditComponent,
     DropdownDirective,
     RecipieStartComponent,
-    RecipieEditComponent
+    RecipieEditComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +41,6 @@ import { RecipeService } from './recipes/recipe.service';
     ReactiveFormsModule,
     HttpClientModule,
     AppRoutingModule
-
   ],
   providers: [ShoppingListService, RecipeService],
   bootstrap: [AppComponent]
