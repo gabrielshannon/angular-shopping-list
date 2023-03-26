@@ -18,6 +18,7 @@ import { RecipieStartComponent } from './recipes/recipie-start/recipie-start.com
 import { RecipieEditComponent } from './recipes/recipie-edit/recipie-edit.component';
 import { RecipeService } from './recipes/recipe.service';
 import { AuthComponent } from './auth/auth.component';
+import { LoadingSpinnerComponent } from './shared/loading-spinner/loadin-spinner';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { AuthComponent } from './auth/auth.component';
     DropdownDirective,
     RecipieStartComponent,
     RecipieEditComponent,
-    AuthComponent
+    AuthComponent,
+    LoadingSpinnerComponent
   ],
   imports: [
     BrowserModule,
