@@ -1,5 +1,4 @@
 import {
-  HttpEvent,
   HttpHandler,
   HttpInterceptor,
   HttpParams,
@@ -7,9 +6,7 @@ import {
 } from '@angular/common/http';
 
 import { take, exhaustMap } from 'rxjs/operators';
-
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
 import { AuthService } from './auth.service';
 
 @Injectable()
