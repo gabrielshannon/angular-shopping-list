@@ -12,26 +12,26 @@ import { map, tap } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class AuthGuard implements CanActivate {
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(private authService: AuthService, private router: Router) { }
 
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
-  ): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean |UrlTree> {
+  ): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
     return this.authService.user.pipe(
-        take(1),
+      take(1),
       map(user => {
         const isAuth = !!user;
-        if(isAuth){
-            return true
+        if (isAuth) {
+          return true
         }
         return this.router.createUrlTree(['/auth'])
       }),
-    //   tap(isAuth => {
-    //     if (!isAuth) {
-    //       this.router.navigate(['/auth']);
-    //     }
-    //   })
+      //   tap(isAuth => {
+      //     if (!isAuth) {
+      //       this.router.navigate(['/auth']);
+      //     }
+      //   })
     );
   }
 }

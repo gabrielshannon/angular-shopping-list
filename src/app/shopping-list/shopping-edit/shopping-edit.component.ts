@@ -4,6 +4,7 @@ import { NgForm, NgModel } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { Ingredient } from '../../shared/ingredient.model';
 import { ShoppingListService } from '../shopping-list.service';
+import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'app-shopping-edit',
@@ -11,7 +12,7 @@ import { ShoppingListService } from '../shopping-list.service';
   styleUrls: ['./shopping-edit.component.css'],
 })
 export class ShoppingEditComponent implements OnInit, OnDestroy {
-  constructor(private slService: ShoppingListService) {}
+  constructor(private slService: ShoppingListService, private store: Store<{ shoppingList: { ingredients: Ingredient[] } }>){}
   @ViewChild('f') slForm: NgForm;
   subscription: Subscription;
   editMode = false;
